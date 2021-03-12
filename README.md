@@ -27,4 +27,41 @@ when promted we should type our password
 Now VScode should open a new window where we can have access to our files and it will show some terminal tabs where we can put the commands required to try our code.
 
 ## Requirements
- 
+In order to make it death simple we need to install the libraries to manage the DHT11 sensor, open a terminal and type:
+``` BASH
+$ sudo pip install Adafruit_DHT
+```
+
+
+## Sources
+DHT11 with raspberry
+https://learn.adafruit.com/adafruit-io-basics-temperature-and-humidity/python-code
+
+I2C Display with raspberry
+https://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/
+
+## Development
+The following scripts were developed
+
+lcd_test.py
+: Simple code to test the LCD, once it is run, see what it the display showing
+
+dht11_test.py
+: Simple code to read the sensor and show values on terminal
+
+dht_lcd.py
+: Script that integrates the codes explained before, to read data from sensor and print on the LCD
+
+I2C_LCD_driver
+: Driver to be able to handle the LCD display
+
+## Run scripts
+``` BASH
+$ sudo python dht_lcd.py 
+```
+
+## Run script automatically from boot
+Edit the ```/etc/rc.local``` file, add the following line before the ```exit 0```
+``` BASH
+sudo python /home/pi/dht_lcd.py 
+```
