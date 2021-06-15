@@ -79,7 +79,7 @@ $ sudo python dht_lcd.py
 
 Edit the `` `/etc/rc.local` ` ` file, add the following line before the ` ``exit 0
 
-``` 
+
 ``` BASH
 sudo python /home/pi/dht_lcd.py 
 ```
